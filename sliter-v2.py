@@ -97,7 +97,7 @@ class Snake:
         if self.has_crashed(pos):
             self.died = True
         if self.hit_food(pos):
-            self.length = self.length + 4
+            self.length = self.length + 3
             self.score = self.score + 1
         self.update_score()
 
@@ -190,6 +190,7 @@ def begin_new_game(event):
     if not snake2 == None:
         snake2.remove()
         snake2 = None
+    snake_array = None
     food_array = [Food.create_random_location(canvas, width,height)]
     snake1 = Snake(0, canvas, "blue","<KeyPress-Left>","<KeyPress-Right>","<KeyPress-Up>","<KeyPress-Down>", food_array)
     snake2 = Snake(1, canvas, "red","<KeyPress-a>","<KeyPress-d>","<KeyPress-w>","<KeyPress-s>", food_array)
